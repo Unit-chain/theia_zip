@@ -5,12 +5,12 @@ set(CMAKE_CXX_STANDARD 20)
 
 find_package(zstd CONFIG REQUIRED)
 
-add_executable(theia_zip
-        main.cpp
+add_library(theia_zip
         zip.h
         ZIPArchive.h
         ZIPArchive.cpp
-        crc32.h)
+        crc32.h
+)
 
 target_link_libraries(${PROJECT_NAME}
         zstd::libzstd_static
